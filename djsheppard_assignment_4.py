@@ -52,3 +52,39 @@ else:
             print("Humanities study: -5 stress, +2 social points (if not already calm).")
         else:
             print("You're already pretty relaxed, humanities keep you steady.")
+
+print("\n--- Final Semester Assessment ---")
+
+#Type checking with identity operators (I had to google how to set this up for type checking.)
+if type(current_gpa) is float:
+    print("GPA is correctly stored as a float.")
+else:
+    print("Error: GPA should be a float!")
+
+if type(study_choice) is not int:  #seeing if its not an int.
+    print("Study choice is valid text input.")
+
+#If statements for final outcomes.
+if current_gpa >= 3.5:
+    if stress_level < 60:
+        ending = "You graduate with honors, balanced and strong!"
+    else:
+        ending = "Your grades are great, but high stress takes its toll."
+elif current_gpa >= 2.5:
+    if social_points > 30:
+        ending = "You pass comfortably, enjoying a good social life."
+    else:
+        ending = "You scrape through, but isolation makes it tough."
+else:
+    if stress_level > 85:
+        ending = "Burnout strikes — you fail this semester."
+    else:
+        ending = "Academics were rough, but you survived to try again."
+
+#Prints final ending and finishing stats.
+print(f"Final Ending: {ending}\n")
+print("--- Final Statistics ---")
+print(f"Final GPA: {current_gpa:.2f}")
+print(f"Final Study Hours: {study_hours}")
+print(f"Final Social Points: {social_points}")
+print(f"Final Stress Level: {stress_level}")
